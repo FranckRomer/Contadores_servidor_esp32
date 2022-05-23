@@ -9,7 +9,7 @@
 // RED A INTERNET
 const char* ssid = "TP-Link_6C72";
 const char* password = "16823099";
-const char* server = "http://192.168.0.105:3001/api/v1/esp32/";
+const char* server = "http://192.168.0.102:3001/api/v1/esp32/";
 
 //RED STATIC
 // Set your Static IP address
@@ -28,10 +28,9 @@ String ramal = "HEROES";
 WebSocketsServer webSocket = WebSocketsServer(81);
 WiFiClient espClient;
 
-
 /*
- *   VARIABLES GLOBALES
- */
+     VARIABLES GLOBALES
+*/
 String hora_servidor = "ERROR";
 String msm_ws = "ERROR";
 String msm_res_api = "ERROR";
@@ -44,36 +43,36 @@ boolean boolean_SERVER = false;
 
 /*
  * ********************************************************************
- *               Setup
+                 Setup
  * ********************************************************************
 */
 void setup() {
-    // Setup basico
-    Serial.begin(115200);
-    delay(50);
-    Serial.println("");
-    Serial.println("");
-    Serial.println("");
-    setupWiFi();
-    
-    Serial.println("Longitud: " + String(longitud));
-    Serial.println("Latitud: " + String(latitud));
-      
-    Serial.setDebugOutput(true);
-    webSocket.begin();
-    webSocket.onEvent(webSocketEvent);
-    Serial.println("Servidor webSocketEvent iniciado"); 
+  // Setup basico
+  Serial.begin(115200);
+  delay(50);
+  Serial.println("");
+  Serial.println("");
+  Serial.println("");
+  setupWiFi();
+
+  Serial.println("Longitud: " + String(longitud));
+  Serial.println("Latitud: " + String(latitud));
+
+  Serial.setDebugOutput(true);
+  webSocket.begin();
+  webSocket.onEvent(webSocketEvent);
+  Serial.println("Servidor webSocketEvent iniciado");
 }
 
 
 /*
  * ********************************************************************
- *            Programa principal
+              Programa principal
  * ********************************************************************
 */
 
 void loop() {
 
-    webSocket.loop();
-    
+  webSocket.loop();
+
 }

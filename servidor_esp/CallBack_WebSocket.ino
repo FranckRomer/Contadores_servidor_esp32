@@ -74,6 +74,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
         else{
           // Se deserializa cualquier JSON
           DeserializeObject((num),msm_ws);
+          //funcion_repeticion((num),msm_ws);
           // Se MANDA LA RESPUESTA DE   API
           //webSocket.sendTXT(num, msm_res_api);
         }
@@ -99,4 +100,33 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
       break;
     }
     msm_ws = "";
+}
+
+void funcion_repeticion(uint8_t num ,String payload){
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
+  DeserializeObject((num),payload);
+  delay(100);
 }
